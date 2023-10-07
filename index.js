@@ -79,7 +79,6 @@ addEventListener("DOMContentLoaded", (event) => {
     url.searchParams.set("q", searchContent);
     const response = await fetch(url);
     const returnResponse = await response.json();
-    console.log(returnResponse);
     return returnResponse;
   }
 
