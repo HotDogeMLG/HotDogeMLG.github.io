@@ -37,7 +37,6 @@ addEventListener("DOMContentLoaded", (event) => {
   const debounce = (fn, debounceTime) => {
     let timer = null;
     return function () {
-      console.log("Debounced fn called");
       if (timer !== null) {
         clearTimeout(timer);
         timer = null;
