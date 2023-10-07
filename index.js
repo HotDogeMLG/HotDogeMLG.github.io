@@ -168,7 +168,7 @@ addEventListener("DOMContentLoaded", (event) => {
   `;
 
   let allSearchElements = document.querySelectorAll(".search__element");
-  allSearchElements.forEach((elem) => {
+  allSearchElements.forEach((elem, ind) => {
     elem.style.cssText = `
       display: none;
       width: 300px;
@@ -183,8 +183,11 @@ addEventListener("DOMContentLoaded", (event) => {
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      transition: transform .5s;
+      position: absolute;
+      z-index: 10;
+      background-color: white;
     `;
+    elem.style.top = `calc(100px + ${ind}*55px)`;
   });
 
   addedSearchResults.style.cssText = `
