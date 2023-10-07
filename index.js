@@ -37,7 +37,9 @@ addEventListener("DOMContentLoaded", (event) => {
   const debounce = (fn, debounceTime) => {
     let timer = null;
     return function () {
+      console.log("Debounced fn called");
       if (timer !== null) {
+        clearTimeout(timer);
         timer = null;
       }
       timer = setTimeout(() => {
@@ -76,7 +78,9 @@ addEventListener("DOMContentLoaded", (event) => {
     let url = new URL("https://api.github.com/search/repositories");
     url.searchParams.set("q", searchContent);
     const response = await fetch(url);
-    return response.json();
+    const returnResponse = await response.json();
+    console.log(returnResponse);
+    return returnResponse;
   }
 
   // ------------------------- Adding selected repositories ------------------------- //
